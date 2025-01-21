@@ -1,5 +1,5 @@
 {
-  "name": "Front-end-test-converter",
+  "name": "front-end-test-converter",
   "version": "0.0.1",
   "author": "Ionic Framework",
   "homepage": "https://ionicframework.com/",
@@ -29,6 +29,7 @@
     "@ionic/angular": "^8.0.0",
     "@ionic/storage-angular": "^4.0.0",
     "Fron-end-test-converter": "file:",
+    "front-end-test-converter": "file:",
     "Front-end-test-converter": "file:",
     "ionicons": "^7.0.0",
     "rxjs": "~7.8.0",
