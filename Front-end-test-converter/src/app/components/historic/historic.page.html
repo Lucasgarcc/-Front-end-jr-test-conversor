@@ -1,0 +1,35 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button> <!-- Botão para abrir o menu -->
+    </ion-buttons>
+    <ion-title>Conversor de Moedas</ion-title>
+    <ion-buttons slot="end"> <!-- Adicionando o botão no slot "end" -->
+      <ion-button size="large"  (click)="navigateToHomePage()" routerDirection="root">
+        <ion-icon ios="logo-apple" md="settings-sharp"></ion-icon>
+        Home
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+    <!-- Botão para carregar histórico -->
+    <ion-button expand="full" (click)="loadHistory()">Carregar Histórico</ion-button>
+
+<!-- Div para exibir o valor convertido -->
+<div *ngIf="convertedValue !== null">
+  <h2>Valor Convertido: {{ convertedValue }} {{ currencyTarget }}</h2>
+</div>
+
+<!-- Div para exibir o histórico de conversões -->
+<div *ngIf="history.length > 0">
+  <h2>Histórico de Conversões:</h2>
+  <ion-list>
+    <ion-item *ngFor="let record of history">
+      {{ record.amount }} {{ record.from }} → {{ record.result }} {{ record.to }}
+    </ion-item>
+  </ion-list>
+</div>
+</ion-content>
+

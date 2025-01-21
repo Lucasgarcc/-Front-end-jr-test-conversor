@@ -1,0 +1,106 @@
+#container {
+  text-align: center;
+
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#container strong {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+#container p {
+  font-size: 16px;
+  line-height: 22px;
+
+  color: #8c8c8c;
+
+  margin: 0;
+}
+
+#container a {
+  text-decoration: none;
+}
+
+.form {
+  margin: 1rem auto;
+  padding: 2rem;
+  width: 50%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #050505;
+}
+
+.form ion-title{
+  font-size: 2rem;
+}
+
+.form-content, 
+.form-content-list {
+  background-color: #fff;
+}
+.form {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.input-shadow {
+  ion-input label select {
+    --background: #ffffff;
+    --padding-start: 10px;
+    --padding-end: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+ion-select-option {
+  --background: #ffffff;
+  --color: #fff;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+ion-item {
+  --background: transparent;
+  --color: #050505;
+}
+
+/* Estilizando o alert */
+.custom-alert {
+  --background: #fff; /* Cor de fundo branca */
+  --color: #333; /* Cor do texto escura */
+  --border-radius: 8px; /* Bordas arredondadas */
+  --padding: 20px; /* Padding para o conteúdo */
+  --box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilo do botão de ação do alert */
+.custom-alert .alert-button {
+  --background: #f3f3f3; /* Cor de fundo do botão */
+  --color: #fff; /* Cor do texto do botão */
+}
+
+
+
+@media (max-width: 768px) {
+  .form {
+    width: 100%;
+  }
+  
+}

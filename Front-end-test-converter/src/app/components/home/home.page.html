@@ -1,0 +1,102 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button> <!-- Botão para abrir o menu -->
+    </ion-buttons>
+    <ion-title>Conversor de Moedas</ion-title>
+    <ion-buttons slot="end"> <!-- Adicionando o botão no slot "end" -->
+      <ion-button size="large"  (click)="navigateToHistoricPage()" routerDirection="root">
+        <ion-icon ios="logo-apple" md="settings-sharp"></ion-icon>
+        Histórico
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Conversão</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div id="container" class="ion-padding">
+    <strong>Pronto para converter?</strong>
+    <form class="form">
+      <ion-title>Conversor</ion-title>
+      <ion-list class="form-content">
+        <!-- Campo para o valor -->
+        <ion-item class="form-content-list">
+          <ion-input
+            class="input-shadow"
+            [(ngModel)]="value"
+            name="value"
+            type="number"
+            placeholder="Digite o valor desejado"
+            required
+          ></ion-input>
+        </ion-item>
+
+        <!-- Campo para moeda de origem -->
+        <ion-item>
+          <ion-select
+            class="input-shadow"
+            [(ngModel)]="currencyOrigin"
+            name="currencyOrigin"
+            placeholder="Moeda de origem (Ex: USD)"
+            required
+            [multiple]="false"
+          >
+            <!-- <ion-select-option *ngFor="let currency of currencies" [value]="currency.name">
+              {{ currency.name }}
+            </ion-select-option> -->
+            <ion-select-option value="USD">Dólar</ion-select-option>
+            <ion-select-option value="BRL">Real</ion-select-option>
+            <ion-select-option value="EUR">Euro</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <!-- Campo para moeda de destino -->
+        <ion-item>
+          <ion-select
+            class="input-shadow"
+            [(ngModel)]="currencyTarget"
+            name="currencyTarget"
+            placeholder="Moeda de destino (Ex: BRL)"
+            required
+            [multiple]="false"
+          >
+            <!-- <ion-select-option *ngFor="let currency of currencies" [value]="currency.name">
+              {{ currency.name }}
+            </ion-select-option> -->
+            <ion-select-option value="USD">Dólar</ion-select-option>
+            <ion-select-option value="BRL">Real</ion-select-option>
+            <ion-select-option value="EUR">Euro</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <!-- Botão de conversão -->
+        <ion-button expand="block" (click)="onSubmit()">Converter</ion-button>
+
+        <!-- Botão para carregar histórico -->
+        <ion-button expand="full" (click)="loadHistory()">Carregar Histórico</ion-button>
+      </ion-list>
+    </form>
+
+    <!-- Div para exibir o valor convertido -->
+    <div *ngIf="convertedValue !== null">
+      <h2>Valor Convertido: {{ convertedValue }} {{ currencyTarget }}</h2>
+    </div>
+
+    <!-- Div para exibir o histórico de conversões -->
+    <div *ngIf="history.length > 0">
+      <h2>Histórico de Conversões:</h2>
+      <ion-list>
+        <ion-item *ngFor="let record of history">
+          {{ record.amount }} {{ record.from }} → {{ record.result }} {{ record.to }}
+        </ion-item>
+      </ion-list>
+    </div>
+  </div>
+</ion-content>

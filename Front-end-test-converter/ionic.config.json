@@ -1,0 +1,7 @@
+{
+  "name": "Fron-end-test-converter",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
